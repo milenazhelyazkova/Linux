@@ -1,0 +1,37 @@
+Task1:
+Create a directory in your home directory called projects. In the projects
+directory, create nine empty fi les that are named house1, house2, house3, and so on to house9. Assuming there are lots of other fi les in that directory, come up with a single argument to ls that would list just those nine files.
+
+home$ sudo mkdir projects
+home$ cd projects/
+home/projects$ sudo touch house{1..9}
+home/projects$ ls *house*
+house1  house2  house3  house4  house5  house6  house7  house8  house9
+
+
+Task2:
+Make the $HOME/projects/houses/doors/ directory path. Create the following empty fi les within this directory path (try using absolute and relative paths from your home directory):
+$HOME/projects/houses/bungalow.txt
+$HOME/projects/houses/doors/bifold.txt
+$HOME/projects/outdoors/vegetation/landscape.txt
+
+home/projects$ sudo mkdir houses
+home/projects/houses$ sudo touch /home/projects/houses/bungalow.txt      # absolute
+home/projects/houses$ sudo mkdir ./doors                                 # relative
+home/projects/houses/doors$ sudo touch ./bifold.txt                      
+home/projects/houses$ cd ..
+home/projects$ sudo mkdir ./outdoors
+home/projects/outdoors$ sudo mkdir ./vegetation
+home/projects/outdoors/vegetation$ sudo touch ./landscape.txt
+
+
+Task3:
+Copy the files house1 and house5 to the $HOME/projects/houses/ directory.
+
+home/projects$ sudo cp -r house1 ./houses/
+home/projects$ sudo cp -r house5 ./houses/
+
+Task4:
+Remove the files house6, house7, and house8 without being prompted.
+
+home/projects$ sudo rm ./house{6..8}
